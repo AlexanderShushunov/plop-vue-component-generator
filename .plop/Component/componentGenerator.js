@@ -3,9 +3,12 @@ const { getTemplates } = require('../utils/getTemplates')
 
 const templates = getTemplates(path.resolve(__dirname, 'templates'))
 
-function componentGenerator (dist) {
+function componentGenerator (dist, plop) {
+  plop.setPartial('ComponentName', '{{pascalCase name}}');
+  plop.setPartial('CssClassName', '{{kebabCase name}}');
+
   function makeDist (fileName) {
-    return path.resolve(dist, `{{pascalCase name}}/${fileName}`)
+    return path.resolve(dist, `{{> ComponentName}}/${fileName}`)
   }
 
   const prompts = [{
@@ -29,13 +32,13 @@ function componentGenerator (dist) {
       templateFile: templates['index']
     }, {
       type: 'add',
-      path: makeDist('{{pascalCase name}}.vue'),
+      path: makeDist('{{> ComponentName}}.vue'),
       templateFile: templates['Component']
     }]
 
     const addTest = {
       type: 'add',
-      path: makeDist('{{pascalCase name}}.spec.js'),
+      path: makeDist('{{> ComponentName}}.spec.js'),
       templateFile: templates['Component.spec']
     }
 

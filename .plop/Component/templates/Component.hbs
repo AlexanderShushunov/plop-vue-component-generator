@@ -1,5 +1,5 @@
 <template>
-  <div class="{{kebabCase name}}">
+  <div class="{{> CssClassName}}">
     {{#if vuex}}
       \{{field}}
     {{/if}}
@@ -12,7 +12,7 @@ import { mapState } from 'vuex'
 {{/if}}
 
 export default {
-  name: '{{pascalCase name}}',
+  name: '{{> ComponentName}}',
   {{#if vuex}}
   computed: {
     ...mapState('module', [
@@ -24,6 +24,6 @@ export default {
 </script>
 
 <style scoped>
-  .{{kebabCase name}} {
+  .{{> CssClassName}} {
   }
 </style>
