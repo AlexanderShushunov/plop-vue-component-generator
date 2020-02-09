@@ -1,11 +1,25 @@
 <template>
   <div class="{{kebabCase name}}">
+    {{#if vuex}}
+      \{{field}}
+    {{/if}}
   </div>
 </template>
 
 <script>
+{{#if vuex}}
+import { mapState } from 'vuex'
+{{/if}}
+
 export default {
-  name: '{{pascalCase name}}'
+  name: '{{pascalCase name}}',
+  {{#if vuex}}
+  computed: {
+    ...mapState('module', [
+      'field'
+    ])
+  }
+  {{/if}}
 }
 </script>
 

@@ -1,0 +1,19 @@
+import Vuex from 'vuex'
+import merge from 'lodash.merge'
+
+export function createStubStore (storyOptions = {}) {
+  const store = {
+    modules: {
+      module: {
+        namespaced: true,
+        state: {
+          field: 'fieldValue'
+        }
+      }
+    }
+  }
+
+  const options = merge(store, storyOptions)
+
+  return new Vuex.Store(options)
+}

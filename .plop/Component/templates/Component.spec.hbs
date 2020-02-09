@@ -1,9 +1,22 @@
-import { shallowMount } from '@vue/test-utils'
+{{#if vuex}}import Vuex from 'vuex'{{/if}}
+import { shallowMount, {{#if vuex}}createLocalVue{{/if}} } from '@vue/test-utils'
 import {{pascalCase name}} from './{{pascalCase name}}'
+{{#if vuex}}
+import { createStubStore } from './createStubStore'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+const store = createStubStore()
+{{/if}}
 
 describe('{{pascalCase name}}', () => {
   it('Render', () => {
     const wrapper = shallowMount({{pascalCase name}}, {
+      {{#if vuex}}
+      localVue,
+      store,
+      {{/if}}
       propsData: { }
     })
     expect(wrapper.html()).toMatchSnapshot()
