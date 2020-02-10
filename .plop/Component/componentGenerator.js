@@ -21,6 +21,10 @@ function componentGenerator (dist, plop) {
     message: 'add jest test'
   }, {
     type: 'confirm',
+    name: 'storybook',
+    message: 'add storybook'
+  }, {
+    type: 'confirm',
     name: 'vuex',
     message: 'connect with vuex'
   }, {
@@ -33,7 +37,7 @@ function componentGenerator (dist, plop) {
     default: 'module'
   }]
 
-  function actions ({test}) {
+  function actions ({test, storybook}) {
     const addBaseFiles = [{
       type: 'add',
       path: makeDist('index.js'),
@@ -56,6 +60,13 @@ function componentGenerator (dist, plop) {
       templateFile: templates['createStubStore']
     }
 
+    const addStory = {
+      type: 'addMany',
+      destination: makeDist('stories'),
+      templateFiles: templates['stories'],
+      base: templates['stories']
+    }
+
     const res = []
     res.push(...addBaseFiles)
     if (test) {
@@ -63,6 +74,9 @@ function componentGenerator (dist, plop) {
     }
     if (addStubStore) {
       res.push(addStubStore)
+    }
+    if (storybook) {
+      res.push(addStory)
     }
     return res
   }

@@ -1,0 +1,24 @@
+<template>
+  <div class="case">
+    <a href="/link/to/markup">Markup from Sketch, Figma, etc</a>
+    <{{> ComponentName}} />
+  </div>
+</template>
+
+<script>
+import {{> ComponentName}} from '../{{> ComponentName}}'
+
+export default {
+  name: '{{> ComponentName}}Story',
+  components: {
+    {{> ComponentName}}
+
+  }
+}
+</script>
+
+<style scoped>
+  .case {
+    margin: 10px;
+  }
+</style>

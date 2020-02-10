@@ -1,0 +1,16 @@
+import { storiesOf } from '@storybook/vue'
+import {{> ComponentName}}Story from './{{> ComponentName}}Story'
+{{#if vuex}}
+import { createStubStore } from '../createStubStore'
+
+const store = createStubStore({ devtools: false })
+{{/if}}
+
+storiesOf('components', module)
+  .add('{{> ComponentName}}', () => ({
+    {{#if vuex}}
+    store,
+    {{/if}}
+    components: { {{> ComponentName}}Story },
+    template: '<{{> ComponentName}}Story />'
+  }))
