@@ -4,7 +4,7 @@ import merge from 'lodash.merge'
 export function createStubStore (storyOptions = {}) {
   const store = {
     modules: {
-      module: {
+      {{moduleName}}: {
         namespaced: true,
         state: {
           field: 'fieldValue'

@@ -15,7 +15,7 @@ export default {
   name: '{{> ComponentName}}',
   {{#if vuex}}
   computed: {
-    ...mapState('module', [
+    ...mapState('{{moduleName}}', [
       'field'
     ])
   }

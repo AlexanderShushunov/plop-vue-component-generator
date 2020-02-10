@@ -23,6 +23,14 @@ function componentGenerator (dist, plop) {
     type: 'confirm',
     name: 'vuex',
     message: 'connect with vuex'
+  }, {
+    when ({vuex}) {
+      return vuex
+    },
+    type: 'input',
+    name: 'moduleName',
+    message: 'vuex module name',
+    default: 'module'
   }]
 
   function actions ({test}) {
