@@ -29,12 +29,17 @@ You can add an [external tool](https://www.jetbrains.com/help/webstorm/settings-
  - Program: *plop-vue-component-generator* (if you installed it globally) 
  or *npx @ashushunov/plop-vue-component-generator* (if not)
  - Working directory: *$FilePath$*
+ 
+![External Tools](https://raw.githubusercontent.com/AlexanderShushunov/plop-vue-component-generator/master/readme-assets/exteranal-tools.png)
 
 Click the right button mouse on a folder where you want create a new component.
 In the context menu choose External Tool -> generate-vue-component.
 
+![Context menu](https://raw.githubusercontent.com/AlexanderShushunov/plop-vue-component-generator/master/readme-assets/context-menu.png)
+
+
 ## Use this repo to tune templates
-The project was created with [vue-cli](https://cli.vuejs.org/guide/)
+This project was created with [vue-cli](https://cli.vuejs.org/guide/)
 
 You can fork it and tune templates for you requirements.
 
