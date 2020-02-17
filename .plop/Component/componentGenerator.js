@@ -3,12 +3,12 @@ const { getTemplates } = require('../utils/getTemplates')
 
 const templates = getTemplates(path.resolve(__dirname, 'templates'))
 
-function componentGenerator (dist, plop) {
+function componentGenerator (dest, plop) {
   plop.setPartial('ComponentName', '{{pascalCase name}}');
   plop.setPartial('CssClassName', '{{kebabCase name}}');
 
-  function makeDist (fileName) {
-    return path.resolve(dist, `{{> ComponentName}}/${fileName}`)
+  function makeDest (fileName) {
+    return path.resolve(dest, `{{> ComponentName}}/${fileName}`)
   }
 
   const prompts = [{
@@ -40,29 +40,29 @@ function componentGenerator (dist, plop) {
   function actions ({test, storybook}) {
     const addBaseFiles = [{
       type: 'add',
-      path: makeDist('index.js'),
+      path: makeDest('index.js'),
       templateFile: templates['index']
     }, {
       type: 'add',
-      path: makeDist('{{> ComponentName}}.vue'),
+      path: makeDest('{{> ComponentName}}.vue'),
       templateFile: templates['Component']
     }]
 
     const addTest = {
       type: 'add',
-      path: makeDist('{{> ComponentName}}.spec.js'),
+      path: makeDest('{{> ComponentName}}.spec.js'),
       templateFile: templates['Component.spec']
     }
 
     const addStubStore = {
       type: 'add',
-      path: makeDist('createStubStore.js'),
+      path: makeDest('createStubStore.js'),
       templateFile: templates['createStubStore']
     }
 
     const addStory = {
       type: 'addMany',
-      destination: makeDist('stories'),
+      destination: makeDest('stories'),
       templateFiles: templates['stories'],
       base: templates['stories']
     }

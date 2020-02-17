@@ -1,18 +1,39 @@
 {
-  "name": "plop-vue-component-generator",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@ashushunov/plop-vue-component-generator",
+  "version": "1.0.0",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderShushunov/plop-vue-component-generatort"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "component",
+    "generator"
+  ],
+  "author": "Alexander Shushunov",
+  "license": "MIT",
+  "homepage": "https://github.com/AlexanderShushunov/plop-vue-component-generatort",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
-    "plop": "plop"
+    "plop": "plop --dest ./src/components"
   },
   "dependencies": {
     "core-js": "^3.4.4",
+    "minimist": "^1.2.0",
     "vue": "^2.6.10",
+    "plop": "^2.5.3",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
@@ -28,7 +49,6 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lodash.merge": "^4.6.2",
-    "plop": "^2.5.3",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
