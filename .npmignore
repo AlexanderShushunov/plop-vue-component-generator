@@ -2,6 +2,7 @@
 .storybook/
 dist/
 public/
+readme-assets/
 src/
 .npmignore
 .browserslistrc
