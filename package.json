@@ -1,10 +1,10 @@
 {
   "name": "@ashushunov/plop-vue-component-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlexanderShushunov/plop-vue-component-generatort"
+    "url": "https://github.com/AlexanderShushunov/plop-vue-component-generator"
   },
   "keywords": [
     "vue",
@@ -14,7 +14,7 @@
   ],
   "author": "Alexander Shushunov",
   "license": "MIT",
-  "homepage": "https://github.com/AlexanderShushunov/plop-vue-component-generatort",
+  "homepage": "https://github.com/AlexanderShushunov/plop-vue-component-generator",
   "publishConfig": {
     "access": "public"
   },
