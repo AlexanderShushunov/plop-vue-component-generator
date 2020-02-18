@@ -15,7 +15,7 @@ The new component has a simple render test and a story.
 
 You can install the generator globally.
 ```
-npx install -g @ashushunov/plop-vue-component-generator
+npm install -g @ashushunov/plop-vue-component-generator
 cd dir/where/you/want/to/generate/a/component
 plop-vue-component-generator
 ```
@@ -26,9 +26,12 @@ plop-vue-component-generator
 You can add an [external tool](https://www.jetbrains.com/help/webstorm/settings-tools-external-tools.html) 
 (Preferences -> Tools -> External Tools -> Add)
  - Name: *generate-vue-component*
- - Program: *plop-vue-component-generator* (if you installed it globally) 
- or *npx @ashushunov/plop-vue-component-generator* (if not)
+ - Program: *plop-vue-component-generator* 
  - Working directory: *$FilePath$*
+ 
+ If you did not install the generator globally, set
+ - Program: *npx*
+ - Arguments: *@ashushunov/plop-vue-component-generator* 
  
 ![External Tools](https://raw.githubusercontent.com/AlexanderShushunov/plop-vue-component-generator/master/readme-assets/exteranal-tools.png)
 
