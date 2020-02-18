@@ -37,7 +37,7 @@ function componentGenerator (dest, plop) {
     default: 'module'
   }]
 
-  function actions ({test, storybook}) {
+  function actions ({test, vuex, storybook}) {
     const addBaseFiles = [{
       type: 'add',
       path: makeDest('index.js'),
@@ -72,7 +72,7 @@ function componentGenerator (dest, plop) {
     if (test) {
       res.push(addTest)
     }
-    if (addStubStore) {
+    if (vuex) {
       res.push(addStubStore)
     }
     if (storybook) {

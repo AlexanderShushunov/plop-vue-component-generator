@@ -1,5 +1,5 @@
-{{#if vuex}}import Vuex from 'vuex'{{/if}}
-import { shallowMount, {{#if vuex}}createLocalVue{{/if}} } from '@vue/test-utils'
+{{#if vuex}}import Vuex from 'vuex'
+{{/if}}import { shallowMount{{#if vuex}}, createLocalVue{{/if}} } from '@vue/test-utils'
 import {{> ComponentName}} from './{{> ComponentName}}'
 {{#if vuex}}
 import { createStubStore } from './createStubStore'

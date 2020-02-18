@@ -12,8 +12,7 @@ import { mapState } from 'vuex'
 {{/if}}
 
 export default {
-  name: '{{> ComponentName}}',
-  {{#if vuex}}
+  name: '{{> ComponentName}}'{{#if vuex}},
   computed: {
     ...mapState('{{moduleName}}', [
       'field'
