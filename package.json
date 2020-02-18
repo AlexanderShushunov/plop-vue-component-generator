@@ -1,6 +1,6 @@
 {
   "name": "@ashushunov/plop-vue-component-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "bin": "index.js",
   "repository": {
     "type": "git",
